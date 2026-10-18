@@ -1,0 +1,17 @@
+{
+  "begon": "2026-10-18T21:23:31.013Z",
+  "klaar": "2026-10-18T21:23:31.429Z",
+  "volledig": false,
+  "bronnen": {
+    "knmi-daggegevens": {
+      "status": "ok",
+      "aanvragen": 1,
+      "rijen": 27683,
+      "nieuw": 0,
+      "gewijzigd": 0,
+      "laatste": "2026-10-16",
+      "melding": "Geen verandering tegenover de vorige stand."
+    }
+  },
+  "waakhond": null
+}

@@ -1,0 +1,9 @@
+{
+  "name": "databron",
+  "version": "0.1.0",
+  "description": "Bouw een goede dataset: van open-data-API tot grafiek en site, met de kennis van Open Data Index. Vind het in de Index, bouw het met Databron.",
+  "author": { "name": "Lucas Huizinga", "email": "lucas@sorted.co" },
+  "homepage": "https://www.opendataindex.nl/bouwen",
+  "license": "MIT",
+  "keywords": ["open data", "dataset", "datavisualisatie", "nederland", "opendataindex", "mcp"]
+}

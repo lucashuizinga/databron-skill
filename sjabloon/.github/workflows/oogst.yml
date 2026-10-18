@@ -1,0 +1,59 @@
+# De motor van trede 1: elke ochtend ophalen, toetsen en, als alles klopt, de nieuwe stand committen.
+# Elke commit is een versie: `git log data/` is de geschiedenis van de bron (git-scraping).
+# De commit start de deploy via de koppeling met Vercel of Cloudflare, niet via een tweede workflow
+# (een commit met GITHUB_TOKEN start geen nieuwe workflows).
+name: oogst
+
+on:
+  schedule:
+    # 06:30 UTC. Geplande workflows draaien in UTC en starten soms later dan gepland.
+    # In een openbare repo zet GitHub ze uit na 60 dagen zonder activiteit; de dagelijkse commit telt als activiteit.
+    - cron: "30 6 * * *"
+  workflow_dispatch:
+    inputs:
+      volledig:
+        description: "Alles vanaf 1951 opnieuw ophalen"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: oogst
+  cancel-in-progress: false
+
+jobs:
+  oogst:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Ophalen
+        run: pnpm oogst ${{ inputs.volledig && '--volledig' || '' }}
+
+      - name: Toetsen (de poort)
+        run: pnpm toets
+
+      - name: Rapport in de samenvatting
+        if: always()
+        run: test -f toets/rapport.md && cat toets/rapport.md >> "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Committen als er iets veranderde
+        run: |
+          git add data/ toets/rapport.md
+          if git diff --cached --quiet; then
+            echo "Geen verandering."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "data: $(date -u +%F)"
+          git push

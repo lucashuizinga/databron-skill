@@ -1,0 +1,31 @@
+name: Nieuwe bron toevoegen
+description: Stel een bron voor die deze site beter maakt.
+title: "Bron: "
+labels: [bron]
+body:
+  - type: input
+    id: naam
+    attributes:
+      label: Welke bron?
+      description: Naam en uitgever, bijvoorbeeld "KNMI daggegevens".
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Waar staat hij?
+      description: Een link naar de API of de downloadpagina. Staat hij in Open Data Index, dan graag die link.
+    validations:
+      required: true
+  - type: textarea
+    id: waarom
+    attributes:
+      label: Welke vraag beantwoordt hij beter?
+      description: Wat kunnen we met deze bron zeggen dat we nu niet kunnen?
+    validations:
+      required: true
+  - type: textarea
+    id: voorwaarden
+    attributes:
+      label: Wat weet je over licentie en voorwaarden?
+      description: Licentie, een sleutel, limieten, robots.txt. Laat leeg als je het niet weet.

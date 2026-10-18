@@ -1,0 +1,392 @@
+/* Stijl van de grafische engine. Alleen tokens uit app/globals.css, geen losse kleuren. */
+
+/* ---------- Bevinding ---------- */
+
+.bevinding {
+  margin: 72px 0 0;
+  max-width: var(--breed);
+}
+.kop {
+  font-size: clamp(21px, 3.2vw, 26px);
+  max-width: 32ch;
+}
+.onder {
+  margin-top: 8px;
+  color: var(--inkt-2);
+  font-size: 15px;
+  max-width: 60ch;
+}
+.grafiek {
+  margin-top: 28px;
+}
+.bron {
+  margin-top: 18px;
+  color: var(--inkt-2);
+  font-size: 14px;
+  max-width: 60ch;
+}
+
+/* ---------- gedeeld: vak met tekstlaag ---------- */
+
+.vak {
+  position: relative;
+  /* links ruimte voor de asgetallen, rechts voor de eindlabels */
+  margin: 0 3.9rem 0 2.2rem;
+}
+.vak.zonderRechts {
+  margin-right: 0.5rem;
+}
+.svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.svg path,
+.svg line {
+  vector-effect: non-scaling-stroke;
+}
+
+.raster {
+  stroke: var(--lijn);
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+.nul {
+  stroke: var(--inkt-3);
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+.as,
+.label,
+.eindlabel,
+.maand {
+  position: absolute;
+  font-size: 12.5px;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--inkt-2);
+  pointer-events: none;
+}
+.as {
+  right: calc(100% + 8px);
+  transform: translateY(-50%);
+}
+.eindlabel {
+  left: calc(100% + 8px);
+  transform: translateY(-50%);
+}
+.maand {
+  top: calc(100% + 8px);
+  transform: translateX(-50%);
+}
+.maand .kort {
+  display: none;
+}
+@container (max-width: 520px) {
+  .maand.oneven {
+    display: none;
+  }
+  .maand .lang {
+    display: none;
+  }
+  .maand .kort {
+    display: inline;
+  }
+}
+
+/* tekst die over lijnen valt, krijgt een rand in de kleur van het papier */
+.halo {
+  text-shadow:
+    0 0 3px var(--papier),
+    0 0 3px var(--papier),
+    0 0 2px var(--papier);
+}
+
+.omhulsel {
+  container-type: inline-size;
+  padding-bottom: 28px; /* ruimte voor de maand- of jaarlabels */
+}
+
+/* ---------- Jaarlijnen ---------- */
+
+.band {
+  fill: var(--band);
+}
+.midden {
+  fill: none;
+  stroke: var(--context);
+  stroke-width: 1.25;
+  stroke-dasharray: 3 3;
+}
+.context {
+  fill: none;
+  stroke: var(--context);
+  stroke-width: 0.75;
+  opacity: 0.5;
+}
+.vorig {
+  fill: none;
+  stroke: var(--inkt-2);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+.lopend {
+  fill: none;
+  stroke: var(--onderwerp);
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.teken {
+  animation: teken 1.6s cubic-bezier(0.3, 0.6, 0.3, 1) both;
+}
+@keyframes teken {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.punt {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  margin: -5.5px 0 0 -5.5px;
+  border-radius: 50%;
+  background: var(--onderwerp);
+  box-shadow: 0 0 0 2.5px var(--papier);
+  pointer-events: none;
+}
+.punt.verschijn {
+  animation: verschijn 0.4s ease-out 1.5s both;
+}
+@keyframes verschijn {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+}
+
+.puntlabel {
+  position: absolute;
+  transform: translate(12px, -50%);
+  display: grid;
+  gap: 3px;
+  white-space: nowrap;
+  pointer-events: none;
+  font-size: 13px;
+  line-height: 1.05;
+}
+.puntlabel.links {
+  transform: translate(calc(-100% - 12px), -50%);
+  text-align: right;
+}
+.puntlabel b {
+  color: var(--onderwerp);
+  font-weight: 700;
+  font-size: 15px;
+}
+.eindlabel.vorigL {
+  color: var(--inkt);
+  font-weight: 600;
+}
+
+.raak {
+  fill: transparent;
+  cursor: default;
+}
+.raak:hover {
+  fill: color-mix(in srgb, var(--inkt) 4%, transparent);
+}
+
+/* ---------- Jaarstaven ---------- */
+
+.staaf {
+  fill: var(--context);
+}
+.staaf.laatste {
+  fill: var(--onderwerp);
+}
+.staaf:hover {
+  fill: var(--inkt-2);
+}
+.staaf.laatste:hover {
+  fill: var(--onderwerp);
+}
+.staaflabel {
+  position: absolute;
+  transform: translate(-100%, -100%); /* rechts uitgelijnd op de laatste staaf */
+  margin-top: -6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--onderwerp);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.staaflabel.onder {
+  transform: translate(-100%, 0);
+  margin-top: 6px;
+}
+
+/* ---------- Reeks en BandMetDoel ---------- */
+
+.lijn {
+  fill: none;
+  stroke: var(--onderwerp);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+.vergelijk {
+  fill: none;
+  stroke: var(--inkt-2);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+}
+.doel {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  margin: -4.5px 0 0 -4.5px;
+  border-radius: 50%;
+  background: var(--papier);
+  box-shadow: inset 0 0 0 2px var(--inkt);
+}
+
+/* ---------- Rangorde ---------- */
+
+.rangorde {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 5px;
+}
+.rang {
+  display: grid;
+  grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr) minmax(0, 4.2rem);
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+.rangNaam {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rangBalk {
+  height: 14px;
+  background: var(--context);
+  border-radius: 1px;
+  min-width: 1px;
+}
+.rangWaarde {
+  text-align: right;
+  color: var(--inkt-2);
+}
+.rang.eigen .rangBalk {
+  background: var(--onderwerp);
+}
+.rang.eigen .rangNaam,
+.rang.eigen .rangWaarde {
+  font-weight: 700;
+  color: var(--inkt);
+}
+
+/* ---------- Stippenrij ---------- */
+
+.stippen {
+  position: relative;
+  margin: 0 0.5rem;
+}
+.stip {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background: var(--context);
+}
+.stip.eigen {
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  background: var(--onderwerp);
+  box-shadow: 0 0 0 2px var(--papier);
+  z-index: 1;
+}
+.referentie {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-left: 1px dashed var(--inkt-3);
+}
+.stipLabel {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 12.5px;
+  white-space: nowrap;
+  color: var(--inkt-2);
+}
+.stipLabel.eigen {
+  color: var(--onderwerp);
+  font-weight: 700;
+}
+
+/* ---------- Aandeel ---------- */
+
+.aandeel {
+  display: flex;
+  height: 30px;
+  border-radius: 2px;
+  overflow: hidden;
+  gap: 2px;
+}
+.deel {
+  min-width: 2px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--papier);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.deelLabels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin-top: 10px;
+  font-size: 13.5px;
+  color: var(--inkt-2);
+}
+.deelLabels span::before {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  margin-right: 6px;
+  background: var(--kleur);
+}
+
+/* ---------- Tip ---------- */
+
+.tip {
+  position: fixed;
+  z-index: 50;
+  max-width: min(18rem, calc(100vw - 32px));
+  padding: 7px 10px;
+  border-radius: 5px;
+  background: var(--inkt);
+  color: var(--papier);
+  font-size: 13.5px;
+  line-height: 1.35;
+  pointer-events: none;
+  white-space: normal;
+}

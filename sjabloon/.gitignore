@@ -1,0 +1,20 @@
+# afhankelijkheden en bouw
+node_modules/
+.next/
+out/
+.open-next/
+.wrangler/
+*.tsbuildinfo
+next-env.d.ts
+
+# ruwe antwoorden van de bronnen: niet in git (wel lokaal als cache en voor de null-toets)
+.ruw/
+
+# geheimen
+.env
+.env.local
+.env.*.local
+.dev.vars
+
+# systeem
+.DS_Store
