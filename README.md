@@ -65,3 +65,8 @@ node scripts/nieuw.mjs ~/code/mijn-project
 ## Onderhoud
 
 `node scripts/check-skills.mjs` controleert de frontmatter en of alle verwijzingen in de skills bestaan.
+
+## Licentie
+
+MIT, zie [LICENSE](LICENSE). De voorbeelddata in het sjabloon komen van het KNMI (CC BY 4.0); elke bron die je met
+Databron gebruikt, houdt zijn eigen licentie.
