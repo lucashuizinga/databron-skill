@@ -1,6 +1,6 @@
 {
   "name": "databron",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Bouw een goede dataset: van open-data-API tot grafiek en site, met de kennis van Open Data Index. Vind het in de Index, bouw het met Databron.",
   "author": {
     "name": "Lucas Huizinga",

@@ -41,6 +41,20 @@ een vermoeden zonder bewijs. Eén les per keer.
    die werkt: een regel in de toets (`toets/`), een test, een regel in `AGENTS.md`, of een punt voor een reviewer.
    Zet onder "Hoe je het voorkomt" wat je toevoegde, met pad. Kan het niet, schrijf dan waarom.
 
+## Feedback over Databron zelf
+
+Aan het eind van een sessie (niet midden in het werk) vraag je één keer, kort:
+
+> "Mag ik je iets vragen over Databron zelf? Wat werkte goed, en wat was onduidelijk of lastig? Dan stuur ik het naar de
+> maker, zodat de volgende versie beter wordt."
+
+Zegt de gebruiker ja: vat het in zijn woorden samen, laat de samenvatting zien, en stuur pas na een ja met
+`meld_feedback` (MCP-server van Open Data Index): `goed`, `beter`, optioneel `stap` (de skill waar het over gaat),
+`project` (alleen als de gebruiker dat goedvindt) en `contact` (alleen als de gebruiker zelf een e-mailadres of naam
+wil achterlaten voor een reactie). Geen sleutels, geen code, geen persoonsgegevens van anderen. Is de MCP-server er niet,
+bied dan aan een issue te openen op `github.com/lucashuizinga/databron-skill/issues` (met `gh issue create`, na een ja),
+of zet de feedback in `STAND.md` onder "Voor Databron".
+
 ## --ververs
 
 Loop alle lessen langs (maandelijks, of als een bron verandert). Per les één van vijf: **houden**, **bijwerken**,

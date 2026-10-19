@@ -7,7 +7,8 @@ argument-hint: "[de bevinding die de grafiek moet laten zien]"
 # Databron: het beeld
 
 Doel: grafieken op het niveau van een goede krantenredactie, die op de pagina, in het deelbeeld en als download
-dezelfde getallen tonen. **Lees eerst `references/smaak.md`** (de smaak voor interface en grafieken); die is niet
+dezelfde getallen tonen. **Lees eerst `ontwerp.md`** in het project (toon, visitekaartje en interacties, gekozen met
+de gebruiker in `databron-ontwerp`; staat het er niet, doe dat gesprek dan eerst) **en `references/smaak.md`** (de smaak voor interface en grafieken); die is niet
 optioneel. Lees `references/vormen.md` om de vorm te kiezen.
 
 ## De engine (staat in het sjabloon)

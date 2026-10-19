@@ -5,7 +5,8 @@ description: Laat een Databron-project zichzelf bijhouden - een GitHub Action of
 
 # Databron: verversen
 
-Doel: de site blijft vers zonder hulp, en breekt nooit. De keten: **oogst → toets → publiceer → cache legen →
+Doel: de site blijft vers zonder hulp, en breekt nooit. Vereist een repo op GitHub: staat die er nog niet, dan eerst
+`databron-live` (na een ja van de gebruiker). De keten: **oogst → toets → publiceer → cache legen →
 opwarmen → (eventueel) mail**.
 
 ## Stappen
@@ -28,7 +29,7 @@ opwarmen → (eventueel) mail**.
    route (`Authorization: Bearer $CRON_SECRET`) en een opwarmronde langs de belangrijkste pagina's.
 7. **Melden als het faalt**: een rode run mailt GitHub al; zet daarnaast in `data/run.json` wat er misging, zodat de
    site het kan tonen ("De laatste ophaalronde van 18 oktober mislukte; de cijfers zijn van 17 oktober").
-8. **Valkuilen** (`databron-start/references/github.md`): UTC, vertraagde starts, uitgeschakelde schema's na 60 dagen
+8. **Valkuilen** (`databron-live/references/github.md`): UTC, vertraagde starts, uitgeschakelde schema's na 60 dagen
    zonder activiteit in openbare repo's, `GITHUB_TOKEN` start geen nieuwe workflows, bot-bescherming van de host.
 
 ## Poort

@@ -6,6 +6,7 @@ description: Publiceer een Databron-project als site die mensen, zoekmachines en
 # Databron: de site
 
 Doel: een site die je durft te delen, die zonder JavaScript leesbaar is, en die op Vercel én Cloudflare draait.
+Lees eerst `ontwerp.md`. Alles hieronder gebeurt lokaal; online zetten is `databron-live`, pas na een ja.
 
 ## Checklist
 
@@ -28,14 +29,15 @@ Doel: een site die je durft te delen, die zonder JavaScript leesbaar is, en die 
    vermelding in Open Data Index (een bouwproject of een bron) zodat assistenten het vinden via de MCP-server.
 10. **Bytebudget**: meet HTML en JavaScript per route na de build en zet een grens (bijvoorbeeld 200 kB HTML voor een
     entiteitpagina). Groeit het, zoek wat er in de payload sluipt.
-11. **Verhuisbaar** (`databron-start/references/hosting.md`): alleen webstandaarden in sitecode, geen `fs` tijdens het
+11. **Verhuisbaar** (`databron-live/references/hosting.md`): alleen webstandaarden in sitecode, geen `fs` tijdens het
     draaien, configuratie via env. Bouw eens voor het andere platform.
 12. **Smoke-test na de deploy**: de productie-URL antwoordt, de antwoordzin staat erin, `/sitemap.xml`, `/llms.txt` en
     het OG-beeld geven 200.
 13. **Interactie die voelt**: knoppen reageren bij het indrukken, de navigatie zegt waar je bent, beweging is
     onderbreekbaar en wijkt voor `prefers-reduced-motion` (zie `databron-beeld/references/smaak.md`).
 
-Daarna: `databron-deel`, zodat het gevonden en gebruikt wordt.
+Daarna: laat de gebruiker de lokale site zien. Vindt die hem goed, vraag dan of hij online mag (`databron-live`), en
+pas daarna `databron-deel`, zodat het gevonden en gebruikt wordt.
 
 ## Poort
 

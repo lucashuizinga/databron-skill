@@ -1,59 +1,49 @@
 ---
 name: databron-start
-description: Begin een nieuw Databron-project en begeleid de gebruiker van niets naar een live site - repo uit het sjabloon, GitHub, Vercel of Cloudflare, eerste deploy. Gebruik dit bij "nieuw project", "ik wil beginnen", "zet het online", of als /databron geen project vindt. Ook voor mensen die nog nooit een terminal gebruikten.
-argument-hint: "[projectnaam] [uitleg:veel|uitleg:weinig]"
+description: Begin een nieuw Databron-project op de eigen computer - het sjabloon kopiëren, installeren, de voorbeeldsite lokaal laten draaien en in de browser laten zien. Nog niets naar GitHub of online; dat komt pas met databron-live als de gebruiker enthousiast is en ja zegt. Gebruik dit bij "nieuw project", "ik wil beginnen", of als /databron geen project vindt. Ook voor mensen die nog nooit een terminal gebruikten.
+argument-hint: "[projectnaam]"
 ---
 
-# Databron: beginnen
+# Databron: beginnen (lokaal)
 
-Doel: een werkende, gekoppelde repo met een eerste deploy, zonder dat de gebruiker hoeft te weten hoe dat moet.
-Het sjabloon staat in deze plugin: `<basismap van deze skill>/../../sjabloon` (een complete Next.js-site op trede 1
-met een echte voorbeeldbron, KNMI De Bilt). Kopiëren met `node <plugin>/scripts/nieuw.mjs <doelmap> <naam>`.
-Staat het er niet (skills los geïnstalleerd met `npx skills add`): `npx degit lucashuizinga/databron-skill/sjabloon
-<doelmap>`, en zet daarna de naam in `package.json` en `STAND.md`.
+Doel: binnen een paar minuten een werkende site op de eigen computer, met de voorbeeldvraag, zodat de gebruiker
+**ziet** wat Databron maakt. Er gaat nog niets naar buiten: geen GitHub, geen hosting, geen account. Dat komt later
+met `databron-live`, en alleen als de gebruiker dat wil.
 
-## Regels voor het begeleiden
+Het sjabloon staat in deze plugin: `<basismap van deze skill>/../../sjabloon` (een complete Next.js-site met een
+echte voorbeeldbron, KNMI De Bilt). Kopiëren met `node <plugin>/scripts/nieuw.mjs <doelmap> <naam>`. Staat het er niet
+(skills los geïnstalleerd met `npx skills add`): `npx degit lucashuizinga/databron-skill/sjabloon <doelmap>`.
 
-- **Eén stap tegelijk, in gewone taal.** Zeg per stap wat er gebeurt, waarom, en wat de gebruiker daarna heeft.
-  ("Nu maken we de repo op GitHub. Daarna staat je code veilig online en kan GitHub elke dag de data ophalen.")
-- **Inloggen doet de gebruiker zelf.** Interactieve logins laat je typen met `!`: `! gh auth login`,
-  `! vercel login`, `! npx wrangler login`. Je ziet nooit een wachtwoord of sleutel in de chat.
-- **Sleutels gaan via een invoerprompt rechtstreeks naar de plek**, nooit via de chat of een bestand in git:
-  `! gh secret set NAAM`, `! vercel env add NAAM production`, `! npx wrangler secret put NAAM`.
-- **Controleer elke stap voordat de volgende begint** (bestaat de repo, is de Action groen, antwoordt de URL).
-- **Fouten in gewone taal**: wat er misging, wat het betekent, wat we nu doen. Geen kale stacktrace.
-- **Iets dat naar buiten gaat** (repo openbaar maken, een domein koppelen, iets betalen) vraag je eerst.
+## Eerst: zeg in drie zinnen wat er gaat gebeuren
+
+Begin met gewone taal, geen jargon. Bijvoorbeeld:
+
+> "Ik zet eerst een voorbeeldsite op je computer, zodat je ziet wat Databron maakt. Daarna kiezen we samen jouw vraag
+> en bouw ik de site om naar jouw onderwerp. Online zetten doen we pas als jij het goed vindt."
+
+Vraag daarna **één** ding, met twee duidelijke keuzes (en zet de keuze in `STAND.md`):
+
+> "Hoe wil je dat ik werk?
+> 1. Ik leg elke stap kort uit en vraag het als er iets te kiezen is. (Aanbevolen als dit nieuw voor je is.)
+> 2. Ik werk door en meld alleen wat ik deed en wat jij moet beslissen."
+
+Gebruik tegenover de gebruiker nooit interne woorden als "poort", "trede", "oogst" of "lus". Zeg "controle",
+"opslag", "ophalen", "de stappen".
 
 ## Stappen
 
-1. **Uitleg kiezen.** Als het niet duidelijk is: vraag `uitleg:veel` of `uitleg:weinig` (zie `/databron`).
-2. **Gereedschap nakijken**: `node -v` (22 of hoger), `pnpm -v` (anders `npm i -g pnpm`), `gh --version`, en de
-   CLI van de host (`vercel --version` of `npx wrangler --version`). Leg bij `uitleg:veel` uit wat elk ding is.
-   **Kan de agent zelf zien wat er gebeurt?** Controleer dat jij (niet alleen de gebruiker) kunt: de site lokaal
-   draaien, tests en toets uitvoeren, een schermafbeelding maken (Playwright), logs van Actions lezen
-   (`gh run view --log-failed`) en deploylogs lezen (`vercel logs` of `npx wrangler tail`). Wat ontbreekt, regel je
-   nu; anders moet de gebruiker straks overtypen wat er op het scherm staat.
-3. **Waar komt het project?** Vraag een naam (kleine letters en streepjes) en map. Kopieer het sjabloon:
-   `node <plugin>/scripts/nieuw.mjs ~/code/<naam> <naam>`. Daarna `pnpm install`, `pnpm oogst`, `pnpm toets`,
-   `pnpm dev` en laat de gebruiker de lokale site zien. Zo weten jullie dat alles werkt vóór er iets online gaat.
-4. **GitHub.** `gh auth status`; zo niet ingelogd: laat `! gh auth login` typen. Dan
-   `git init -b main && git add -A && git commit -m "Start uit het Databron-sjabloon"` en
-   `gh repo create <naam> --private --source . --push`. Openbaar alleen als de gebruiker dat wil (lees
-   `references/github.md`: geplande Actions vallen in openbare repo's stil na 60 dagen zonder activiteit).
-5. **Hosting kiezen.** Standaard Vercel; Cloudflare als de gebruiker daar al zit of veel verkeer verwacht. Lees
-   `references/hosting.md` voor de keuze en de commando's. Koppel de repo zodat elke push naar `main` deployt.
-6. **Eerste deploy controleren.** Open de productie-URL met curl en zoek de antwoordzin in de HTML. Laat de gebruiker
-   de URL openen.
-7. **De oogst-Action proberen.** `gh workflow run oogst.yml`, dan `gh run watch`. Groen = de dagelijkse ophaalronde
-   werkt. Rood: lees het log, leg uit, los op.
-8. **`STAND.md` schrijven**: wat er nu staat (lokaal, GitHub, live-URL), de uitlegkeuze, de volgende stap
-   (`databron-vraag`: de eigen vraag in plaats van het KNMI-voorbeeld), open beslispunten.
+1. **Gereedschap nakijken**: `node -v` (22 of hoger) en `pnpm -v` (anders `npm i -g pnpm`). Ontbreekt Node, leg dan uit
+   hoe je het installeert (nodejs.org, de LTS-versie) en wacht.
+2. **Waar komt het project?** Stel een naam voor (kleine letters en streepjes, uit het onderwerp) en een map
+   (`~/code/<naam>`). Vraag alleen als de gebruiker iets anders wil.
+3. **Kopiëren en draaien**: `node <plugin>/scripts/nieuw.mjs ~/code/<naam> <naam>`, dan `pnpm install`, `pnpm oogst`,
+   `pnpm toets` en `pnpm dev`.
+4. **Laten zien.** Open de lokale site (`http://localhost:3481`) en beschrijf in twee zinnen wat de gebruiker ziet: de
+   vraag, de antwoordzin, de grafiek, de bron. Maak een schermafbeelding als dat kan en laat die zien.
+5. **`STAND.md` schrijven**: wat er nu lokaal staat, de gekozen werkwijze, en de volgende stap (`databron-vraag`: jouw
+   eigen vraag in plaats van het KNMI-voorbeeld).
 
 ## Poort
 
-De live-URL toont de site met de antwoordzin, `oogst.yml` is één keer groen gedraaid, en `STAND.md` beschrijft de
-stand. Meld de gebruiker in twee zinnen wat er nu is en wat de volgende stap is.
-
-## Later meer nodig?
-
-Trede 2 (database) en trede 3 (live, API, MCP) komen pas als het project erom vraagt; `databron-opslag` zegt wanneer.
+De site draait lokaal, de gebruiker heeft hem gezien, en `STAND.md` beschrijft de stand. Zeg in twee zinnen wat er nu
+is en wat de volgende stap is. Stel GitHub of online zetten hier nog niet voor.

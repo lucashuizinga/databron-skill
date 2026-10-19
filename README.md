@@ -24,20 +24,24 @@ Daarna in een lege map: `/databron ik wil laten zien …`, of `/databron-start`.
 
 | | Skill | Wat het oplevert |
 |---|---|---|
-| 0 | `databron-start` | een repo uit het sjabloon, op GitHub, live op Vercel of Cloudflare |
+| 0 | `databron-start` | de voorbeeldsite lokaal op je computer, zodat je ziet wat het wordt |
 | 1 | `databron-vraag` | de kernvraag en de antwoordzin die uit de cijfers volgt |
 | 2 | `databron-verken` | per bron een getest datacontract (robots, licentie, aanroep, valkuilen) |
 | 3 | `databron-oogst` | ophalen met een waakhond die bij storing de laatste goede stand houdt |
 | 4 | `databron-opslag` | de vaste indeling, als bestanden in git of in Neon/D1 |
-| 5 | `databron-toets` | de poort vóór publicatie |
+| 5 | `databron-toets` | de controle vóór publicatie |
 | 6 | `databron-reken` | afgeleide cijfers als pure, geteste functies |
 | 7 | `databron-duid` | tekst uit cijfers, met vaste regels |
-| 8 | `databron-beeld` | grafieken met de eigen engine en de Databron-smaak |
-| 9 | `databron-site` | server-first, OG, sitemap, JSON-LD, llms.txt |
-| 10 | `databron-ververs` | een GitHub Action die ophaalt, toetst en publiceert |
-| 11 | `databron-deel` | gevonden, geciteerd en gebruikt: JSON-LD, lancering, meten, feed |
+| 8 | `databron-ontwerp` | een kort gesprek over toon, beeld en interactie, vastgelegd in `ontwerp.md` |
+| 9 | `databron-beeld` | grafieken met de eigen engine en de Databron-smaak |
+| 10 | `databron-site` | een afgemaakte site: server-first, favicon, OG, sitemap, JSON-LD, llms.txt |
+| 11 | `databron-live` | pas na jouw ja: GitHub en hosting op Vercel of Cloudflare |
+| 12 | `databron-ververs` | een GitHub Action die ophaalt, toetst en publiceert |
+| 13 | `databron-deel` | gevonden, geciteerd en gebruikt: JSON-LD, lancering, meten, feed |
 | ✓ | `databron-review` | zes reviewers die alleen melden wat ze kunnen aanwijzen |
-| ✓ | `databron-leer` | lessen in `docs/lessen/` en terug naar de Index met `meld_les` |
+| ✓ | `databron-leer` | lessen in `docs/lessen/`, terug naar de Index met `meld_les`, en jouw feedback met `meld_feedback` |
+
+Alles gebeurt eerst lokaal. Online zetten komt pas als je de site gezien hebt en ja zegt.
 
 `/databron` is de dirigent: hij kijkt waar een project staat en roept de volgende stap aan.
 

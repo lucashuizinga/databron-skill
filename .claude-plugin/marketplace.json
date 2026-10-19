@@ -1,7 +1,7 @@
 {
   "name": "databron",
   "owner": { "name": "Lucas Huizinga" },
-  "metadata": { "description": "Databron: de bouwset van Open Data Index", "version": "0.2.0" },
+  "metadata": { "description": "Databron: de bouwset van Open Data Index", "version": "0.3.0" },
   "plugins": [
     {
       "name": "databron",
