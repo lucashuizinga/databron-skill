@@ -9,6 +9,8 @@ argument-hint: "[projectnaam] [uitleg:veel|uitleg:weinig]"
 Doel: een werkende, gekoppelde repo met een eerste deploy, zonder dat de gebruiker hoeft te weten hoe dat moet.
 Het sjabloon staat in deze plugin: `<basismap van deze skill>/../../sjabloon` (een complete Next.js-site op trede 1
 met een echte voorbeeldbron, KNMI De Bilt). Kopiëren met `node <plugin>/scripts/nieuw.mjs <doelmap> <naam>`.
+Staat het er niet (skills los geïnstalleerd met `npx skills add`): `npx degit lucashuizinga/databron-skill/sjabloon
+<doelmap>`, en zet daarna de naam in `package.json` en `STAND.md`.
 
 ## Regels voor het begeleiden
 

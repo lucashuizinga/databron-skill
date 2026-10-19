@@ -13,6 +13,16 @@ De kennis komt van **Open Data Index** via de MCP-server `opendataindex` (deze p
 vóór je iets zelf uitzoekt: `zoek_bron`, `geef_bron`, `geef_lessen`, `lijst_projecten`, `geef_project`, `zoek_datasets`.
 Wat je onderweg leert over een bron, gaat terug met `meld_les` (via `databron-leer`).
 
+## Zonder de plugin (Codex, Cursor, Copilot, Gemini CLI)
+
+Wie de skills met `npx skills add lucashuizinga/databron-skill` installeerde, heeft geen sjabloon naast de skills en
+misschien geen MCP-server. Dan:
+- **Sjabloon**: `npx degit lucashuizinga/databron-skill/sjabloon <map>` (of clone de repo en kopieer `sjabloon/`).
+- **De Index**: zie je geen `opendataindex`-functies, vraag de gebruiker de MCP-server toe te voegen
+  (`https://www.opendataindex.nl/api/mcp`, HTTP, geen sleutel; uitleg op databron.nl). Intussen lees je dezelfde kennis
+  als tekst: `https://www.opendataindex.nl/llms.txt` en per bron `https://www.opendataindex.nl/bron/<id>.md`.
+  `meld_les` kan dan niet: zet de les in `STAND.md` onder "Voor de Index".
+
 ## De lus
 
 | Stap | Skill | Schrijft | Poort (klaar als) |
