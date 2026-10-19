@@ -12,9 +12,11 @@ onderweg leert, gaat terug naar de Index, zodat de volgende het niet opnieuw hoe
 ## Installeren
 
 ```
-/plugin marketplace add <pad-of-repo-van-databron>
+/plugin marketplace add lucashuizinga/databron-skill
 /plugin install databron@databron
 ```
+
+Of vanaf een lokale kopie: `/plugin marketplace add ~/code/databron`.
 
 Daarna in een lege map: `/databron ik wil laten zien …`, of `/databron-start`.
 
@@ -51,6 +53,12 @@ node scripts/nieuw.mjs ~/code/mijn-project
 
 `https://www.opendataindex.nl/api/mcp` (openbaar, geen sleutel). Functies die Databron gebruikt: `zoek_bron`,
 `geef_bron`, `geef_lessen`, `lijst_projecten`, `geef_project`, `zoek_datasets`, `status` en `meld_les`.
+
+## Achtergrond
+
+- `docs/VOORSTEL.md`: het ontwerp van Databron (de lus, de poorten, de treden, het schema, de smaak).
+- `docs/onderzoek/`: het onderzoek waar het op rust: de Compound Engineering-plugin van Every en vier eigen
+  projecten (Gaspeil, gedoe, averageperson.eu, Stikstofindex).
 
 ## Onderhoud
 
