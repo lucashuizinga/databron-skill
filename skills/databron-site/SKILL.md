@@ -32,6 +32,10 @@ Doel: een site die je durft te delen, die zonder JavaScript leesbaar is, en die 
     draaien, configuratie via env. Bouw eens voor het andere platform.
 12. **Smoke-test na de deploy**: de productie-URL antwoordt, de antwoordzin staat erin, `/sitemap.xml`, `/llms.txt` en
     het OG-beeld geven 200.
+13. **Interactie die voelt**: knoppen reageren bij het indrukken, de navigatie zegt waar je bent, beweging is
+    onderbreekbaar en wijkt voor `prefers-reduced-motion` (zie `databron-beeld/references/smaak.md`).
+
+Daarna: `databron-deel`, zodat het gevonden en gebruikt wordt.
 
 ## Poort
 

@@ -35,5 +35,7 @@ dikke lijnen, een donker thema als enige.
 ## Site
 **Zoekt**: de antwoordzin niet in de server-HTML; grote props naar client-components; ontbrekende OG, sitemap, JSON-LD of
 llms.txt; `fs` tijdens het draaien; configuratie buiten env; links die niet werken; console-fouten in de productiebuild;
-een geheim in `.env.example` met waarde.
+een geheim in `.env.example` met waarde; `dateModified` in JSON-LD die de build-datum is in plaats van de laatste
+meting; entiteitpagina's zonder eigen bevinding of zonder inkomende link; knoppen zonder terugkoppeling bij indrukken;
+beweging die niet wijkt voor `prefers-reduced-motion`.
 **Meldt niet**: prestaties binnen het bytebudget.

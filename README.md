@@ -35,6 +35,7 @@ Daarna in een lege map: `/databron ik wil laten zien …`, of `/databron-start`.
 | 8 | `databron-beeld` | grafieken met de eigen engine en de Databron-smaak |
 | 9 | `databron-site` | server-first, OG, sitemap, JSON-LD, llms.txt |
 | 10 | `databron-ververs` | een GitHub Action die ophaalt, toetst en publiceert |
+| 11 | `databron-deel` | gevonden, geciteerd en gebruikt: JSON-LD, lancering, meten, feed |
 | ✓ | `databron-review` | zes reviewers die alleen melden wat ze kunnen aanwijzen |
 | ✓ | `databron-leer` | lessen in `docs/lessen/` en terug naar de Index met `meld_les` |
 
@@ -58,7 +59,8 @@ node scripts/nieuw.mjs ~/code/mijn-project
 
 - `docs/VOORSTEL.md`: het ontwerp van Databron (de lus, de poorten, de treden, het schema, de smaak).
 - `docs/onderzoek/`: het onderzoek waar het op rust: de Compound Engineering-plugin van Every en vier eigen
-  projecten (Gaspeil, gedoe, averageperson.eu, Stikstofindex).
+  projecten (Gaspeil, gedoe, averageperson.eu, Stikstofindex), plus wat we overnamen uit de Compound-gids van Every,
+  de Marketing Skills-collectie en de apple-design-skill (`bronnen-okt-2026.md`).
 
 ## Onderhoud
 

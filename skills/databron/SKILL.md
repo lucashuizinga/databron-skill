@@ -28,6 +28,7 @@ Wat je onderweg leert over een bron, gaat terug met `meld_les` (via `databron-le
 | 8 | `databron-beeld` | `components/beeld/…` | schermafbeeldingen 390/1280, licht/donker, zonder overloop |
 | 9 | `databron-site` | pagina's, OG, sitemap, llms.txt | productiebuild, curl vindt de kernzin |
 | 10 | `databron-ververs` | `.github/workflows/oogst.yml` | kapotte bron laat vorige stand staan en meldt het |
+| 11 | `databron-deel` | `docs/lancering.md`, JSON-LD, feed | schema zonder fouten, pitch goedgekeurd |
 | ✓ | `databron-review` | bevindingen | bij de poorten na 5, 8 en 9 |
 | ✓ | `databron-leer` | `docs/lessen/`, `meld_les` | aan het eind van elke sessie met een niet-triviale oplossing |
 
@@ -39,12 +40,20 @@ Wat je onderweg leert over een bron, gaat terug met `meld_les` (via `databron-le
    past, lees het met `geef_project`: dan heb je geteste aanroepen, een prompt en valkuilen.
 3. **Eén stap tegelijk.** Roep de skill van de eerste stap aan waarvan de poort nog niet groen is. Controleer na afloop
    zelf de poort (draai het commando, bekijk het bestand). Pas dan de volgende.
-4. **Werk `STAND.md` bij** na elke stap, in gewone taal: wat er nu is, wat de volgende stap is, welke beslissing bij de
-   gebruiker ligt. Iemand moet er na een week mee verder kunnen.
-5. **Beslispunten niet gokken.** robots.txt die het verbiedt, een licentie die hergebruik beperkt, een sleutel die de
+4. **Werk `STAND.md` bij** na elke stap, in gewone taal, met vijf kopjes: *Wat er is*, *Wat deze ronde klaar kwam*,
+   *Wat nog moet*, *Hoe je verder gaat* (het eerstvolgende commando of de skill) en *Beslispunten*. Iemand moet er na
+   een week mee verder kunnen, ook een andere agent.
+5. **Akkoord is een woord.** Bij de antwoordzin (stap 1), vóór de eerste publicatie en vóór de lancering vraag je de
+   gebruiker uitdrukkelijk om ja. Stilte, of je eigen "ziet er goed uit", is geen akkoord.
+6. **Drie zinnen bij elke poort.** Meld naast "klaar": wat de moeilijkste beslissing was, welk alternatief afviel en
+   waarom, en waar je het minst zeker van bent. Dat laatste is waar de gebruiker naar kijkt.
+7. **Tijd gaat naar denken en controleren.** Het meeste werk zit in vraag, verkennen, toets en review; bouwen gaat
+   snel. Vraag na elke ronde: wat maakt de volgende ronde makkelijker? Dat antwoord gaat naar `databron-leer`.
+8. **Beslispunten niet gokken.** robots.txt die het verbiedt, een licentie die hergebruik beperkt, een sleutel die de
    gebruiker moet aanvragen, een betaalde dienst: zet het als beslispunt in `STAND.md`, leg de opties uit met een advies,
    en vraag het. Ga intussen verder met wat niet afhangt van het antwoord.
-6. **Sluit af met `databron-leer`** als er iets niet-triviaals is opgelost.
+9. **Sluit af met `databron-leer`** als er iets niet-triviaals is opgelost. Een ronde zonder les is een ronde waarin
+   het systeem niet slimmer werd.
 
 ## Projecttype
 

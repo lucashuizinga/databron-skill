@@ -37,6 +37,10 @@ een vermoeden zonder bewijs. Eén les per keer.
    staan in docs/lessen/: lees die bij werk aan een bron of onderdeel dat daar genoemd wordt." Klopt de README nog met
    de echte stand?
 
+6. **Maak het vangbaar.** Een les is pas af als het systeem hem de volgende keer zelf vangt. Kies de lichtste vorm
+   die werkt: een regel in de toets (`toets/`), een test, een regel in `AGENTS.md`, of een punt voor een reviewer.
+   Zet onder "Hoe je het voorkomt" wat je toevoegde, met pad. Kan het niet, schrijf dan waarom.
+
 ## --ververs
 
 Loop alle lessen langs (maandelijks, of als een bron verandert). Per les één van vijf: **houden**, **bijwerken**,
@@ -46,4 +50,5 @@ Niets stil wissen. Controleer aanroepen opnieuw; vergelijk met `status` en `geef
 ## Poort
 
 De les staat als bestand met geldige frontmatter, de aanroep is opnieuw gecontroleerd (of de herkomst eerlijk
-aangepast), en een les over een bron of platform is gemeld met een id.
+aangepast), er staat een test, toetsregel, AGENTS-regel of reviewpunt die hem voortaan vangt (of de reden waarom niet),
+en een les over een bron of platform is gemeld met een id.

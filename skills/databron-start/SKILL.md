@@ -27,6 +27,10 @@ met een echte voorbeeldbron, KNMI De Bilt). Kopiëren met `node <plugin>/scripts
 1. **Uitleg kiezen.** Als het niet duidelijk is: vraag `uitleg:veel` of `uitleg:weinig` (zie `/databron`).
 2. **Gereedschap nakijken**: `node -v` (22 of hoger), `pnpm -v` (anders `npm i -g pnpm`), `gh --version`, en de
    CLI van de host (`vercel --version` of `npx wrangler --version`). Leg bij `uitleg:veel` uit wat elk ding is.
+   **Kan de agent zelf zien wat er gebeurt?** Controleer dat jij (niet alleen de gebruiker) kunt: de site lokaal
+   draaien, tests en toets uitvoeren, een schermafbeelding maken (Playwright), logs van Actions lezen
+   (`gh run view --log-failed`) en deploylogs lezen (`vercel logs` of `npx wrangler tail`). Wat ontbreekt, regel je
+   nu; anders moet de gebruiker straks overtypen wat er op het scherm staat.
 3. **Waar komt het project?** Vraag een naam (kleine letters en streepjes) en map. Kopieer het sjabloon:
    `node <plugin>/scripts/nieuw.mjs ~/code/<naam> <naam>`. Daarna `pnpm install`, `pnpm oogst`, `pnpm toets`,
    `pnpm dev` en laat de gebruiker de lokale site zien. Zo weten jullie dat alles werkt vóór er iets online gaat.

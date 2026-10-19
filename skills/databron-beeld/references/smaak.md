@@ -25,6 +25,20 @@ eraan met schermafbeeldingen. Nieuwe feedback wordt een nieuwe regel, met datum 
 - **Eerst richtingen tonen, dan bouwen**: varianten naast elkaar, gerenderd, op het echte formaat bekeken
   (het logo van Open Data Index: "eerst schetsen renderen en op 16 px bekijken").
 - **Schermafbeeldingen in een paginakop klein en stil**: niet kantelen, niet bewegen (Open Data Index).
+- **Reageer bij het indrukken, niet bij het loslaten**: een knop krimpt in 100 ms naar 0,97 op `:active`, en bevestigt
+  met dezelfde woorden ("Kopieer", dan "Gekopieerd"). Vier soorten terugkoppeling: stand, klaar, waarschuwing, fout.
+  (apple-design, naar WWDC, 19 okt 2026)
+- **Beweging is onderbreekbaar.** Wat iemand aanraakt, beweegt vanaf de huidige waarde en kan halverwege terug; geen
+  vaste keyframes voor een gebaar. Standaard een veer zonder overschot; een beetje veer alleen na een veeg. Wat
+  verdwijnt, gaat terug langs de weg waarlangs het kwam. (apple-design)
+- **Letterspatiëring hangt af van de grootte**: grote koppen strakker (-0,02 tot -0,03 em), lopende tekst 0, kleine
+  tekst iets ruimer. Regelafstand omgekeerd: koppen rond 1,05, tekst 1,5. Optische grootte aan waar de letter die heeft
+  (Newsreader). (apple-design)
+- **Waar ben ik?** De navigatie laat zien in welk deel je bent, en elke pagina zegt waar je heen kunt en hoe je terug
+  komt. Labels noemen de inhoud ("Voorbeeld", "Smaak"), geen vage paraplu's. (apple-design)
+- **Een plakkende kop is een laag, geen balk**: doorschijnend met vervaging, en een zachte overgang waar inhoud eronder
+  schuift in plaats van een harde lijn. Dicht bij `prefers-reduced-transparency`, met rand bij `prefers-contrast: more`.
+  (apple-design)
 
 ## Interface: niet doen
 

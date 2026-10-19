@@ -23,10 +23,18 @@ zoekt en wat hij níet meldt.
    - 25 of lager: niet melden.
    Een bevinding van 75 of meer **moet** het bewijs citeren (bestand:regel, of de schermafbeelding met wat erop te zien
    is), anders zakt ze naar 50. Twee reviewers die onafhankelijk hetzelfde vinden: één niveau omhoog.
-4. **Samenvoegen**: dubbele bevindingen samen, gesorteerd op anker. Meld de gebruiker alleen 75 en hoger als "moet",
-   50 als "kijk even".
-5. **Herstellen** wat duidelijk is (en zeg wat je herstelde); vraag bij smaak en bij inhoudelijke keuzes eerst.
+4. **Samenvoegen en prioriteren**: dubbele bevindingen samen. 75 en hoger is **P1** (moet vóór publicatie), 50 is
+   **P2** (deze ronde, of als beslispunt in `STAND.md`). Lager meld je niet. Schrijf ze naar
+   `docs/review/<datum>.md` als lijst met per regel: prioriteit, reviewer, bewijs, status (`open`, `opgelost`,
+   `bewust`).
+5. **Triage met de gebruiker, één tegelijk**, alleen voor wat een keuze is (smaak, inhoud, een afweging). Wat
+   aantoonbaar fout is, herstel je zelf en meld je als opgelost. P1 eerst.
+6. **De gebruiker beoordeelt de bedoeling, de reviewers de rest.** Vraag de gebruiker niet om code te lezen. Vraag:
+   klopt de antwoordzin met wat we wilden weten, is de aanpak logisch, staat er iets wat de data niet dragen?
+7. **Vang het de volgende keer zelf.** Kwam dezelfde soort fout al eens voor, dan hoort er een test, een toetsregel
+   of een regel in `references/reviewers.md` bij (via `databron-leer`), niet nog een keer handwerk.
 
 ## Poort
 
-Geen open bevindingen van 75 of hoger. Wat bewust blijft staan, staat met reden in `STAND.md`.
+Geen open P1 in `docs/review/<datum>.md`. Wat bewust blijft staan, staat er met reden als `bewust`, en in
+`STAND.md`.
