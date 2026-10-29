@@ -1,0 +1,26 @@
+name: Fout in een cijfer melden
+description: Klopt een getal of een zin niet? Laat het weten, met je bewijs.
+title: "Fout: "
+labels: [correctie]
+body:
+  - type: input
+    id: waar
+    attributes:
+      label: Waar staat het?
+      description: De pagina en de zin of grafiek.
+    validations:
+      required: true
+  - type: textarea
+    id: wat
+    attributes:
+      label: Wat klopt er niet?
+      description: Wat staat er, en wat zou er moeten staan?
+    validations:
+      required: true
+  - type: textarea
+    id: bewijs
+    attributes:
+      label: Hoe weet je dat?
+      description: Een link naar de bron, een aanroep of een berekening. Zonder bewijs kunnen we het niet nagaan.
+    validations:
+      required: true

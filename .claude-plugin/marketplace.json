@@ -1,0 +1,13 @@
+{
+  "name": "databron",
+  "owner": { "name": "Lucas Huizinga" },
+  "metadata": { "description": "Databron: de bouwset van Open Data Index", "version": "0.3.0" },
+  "plugins": [
+    {
+      "name": "databron",
+      "description": "Bouw een goede dataset: van open-data-API tot grafiek en site, met de kennis van Open Data Index.",
+      "tags": ["open-data", "dataviz", "nederland", "mcp"],
+      "source": "./"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+sjabloon/node_modules/
+sjabloon/.next/
+sjabloon/.open-next/
+sjabloon/.wrangler/
+sjabloon/next-env.d.ts
+sjabloon/tsconfig.tsbuildinfo
+sjabloon/.ruw/
+sjabloon/out/

@@ -1,0 +1,20 @@
+# Register van de bronnen. Eén regel per bron; het datacontract staat in bronnen/<id>.md.
+# databron-verken vult dit; databron-review (reviewer Bron) controleert het.
+- id: knmi-daggegevens
+  naam: KNMI daggegevens van het weer
+  uitgever: KNMI
+  rol: primair                 # primair | aanvullend | controle
+  url: https://www.knmi.nl/nederland-nu/klimatologie/daggegevens
+  aanroep: POST https://www.daggegevens.knmi.nl/klimatologie/daggegevens
+  ritme: dag                   # hoe vaak de bron nieuwe cijfers heeft
+  vertraging: 1 tot 2 dagen    # gemeten op 18 oktober 2026: de nieuwste dag was 16 oktober
+  revisies: ja                 # het KNMI controleert op werkdagen en vult soms aan; wij noemen de laatste 30 dagen voorlopig
+  licentie: CC BY 4.0
+  bronvermelding: KNMI
+  sleutel: nee
+  robots:
+    gecontroleerd: 2026-10-18
+    afweging: >-
+      robots.txt van www.daggegevens.knmi.nl bevat alleen een commentaarregel, dus geen verbod. Wij doen 1 aanvraag per dag
+      (16 op de eerste van de maand, met 1 seconde pauze) met een eerlijke user-agent.
+  odi: knmi-daggegevens        # id in Open Data Index (https://www.opendataindex.nl/bron/knmi-daggegevens)

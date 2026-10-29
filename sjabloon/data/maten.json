@@ -1,0 +1,13 @@
+[
+  {
+    "id": "tg",
+    "naam": "Etmaalgemiddelde temperatuur",
+    "eenheid": "°C",
+    "soort": "gemiddelde",
+    "hoger_is_beter": null,
+    "decimalen": 1,
+    "bron": "knmi-daggegevens",
+    "definitie": "Gemiddelde temperatuur over een etmaal (00 tot 24 uur UT), op 1,5 meter hoogte, gemeten door het KNMI. KNMI-variabele TG, in de bron in tienden van een graad.",
+    "aanroep": "curl -A \"databron-sjabloon/0.1 (+https://www.opendataindex.nl)\" -d \"stns=260&vars=TG&start=19510101&end=20261231&fmt=json\" https://www.daggegevens.knmi.nl/klimatologie/daggegevens"
+  }
+]

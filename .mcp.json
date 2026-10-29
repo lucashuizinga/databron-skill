@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "opendataindex": {
+      "type": "http",
+      "url": "https://www.opendataindex.nl/api/mcp",
+      "note": "Open Data Index: bronnen, geteste aanroepen, bouwprojecten en lessen van andere bouwers. Openbaar, geen sleutel."
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Begin hier",
+      "description": "De dirigent kiest de volgende stap; start zet het sjabloon lokaal neer.",
+      "skills": ["databron", "databron-start"]
+    },
+    {
+      "title": "Vraag en bron",
+      "description": "Wat het project beantwoordt, en elke bron getest voordat er code tegen komt.",
+      "skills": ["databron-vraag", "databron-verken"]
+    },
+    {
+      "title": "Data",
+      "description": "Ophalen, opslaan, rekenen en de toets vóór publicatie.",
+      "skills": ["databron-oogst", "databron-opslag", "databron-reken", "databron-toets"]
+    },
+    {
+      "title": "Tekst en beeld",
+      "description": "Zinnen uit de cijfers, het ontwerp en de grafieken.",
+      "skills": ["databron-duid", "databron-ontwerp", "databron-beeld"]
+    },
+    {
+      "title": "Publiceren",
+      "description": "De site, online zetten, zichzelf bijhouden en gevonden worden.",
+      "skills": ["databron-site", "databron-live", "databron-ververs", "databron-deel"]
+    },
+    {
+      "title": "Onderweg",
+      "description": "Review bij de poorten en lessen vastleggen voor de volgende ronde.",
+      "skills": ["databron-review", "databron-leer"]
+    }
+  ]
+}
